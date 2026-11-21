@@ -1,0 +1,1472 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MBONENI CONSTRUCTION | Building • Renovating • Improving</title>
+  <meta name="description" content="Mboneni Construction in Tembisa — Quality Work, Lasting Results! New builds, renovations, painting, carpentry, plumbing, and electrical services." />
+
+  <!-- Google Fonts: Plus Jakarta Sans, Cinzel/Syne for Architectural Display, and JetBrains Mono for technical specs -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome 6 for crisp architectural & trade icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind Custom Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: {
+              950: '#08090B',
+              900: '#0E0F12',
+              850: '#13151A',
+              800: '#181B22',
+              700: '#232732',
+            },
+            gold: {
+              400: '#FACC15',
+              500: '#F5B800',
+              600: '#D99B00',
+              glow: 'rgba(245, 184, 0, 0.28)',
+            },
+            alabaster: '#F8FAFC',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Syne"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          animation: {
+            'float-slow': 'floatSlow 7s ease-in-out infinite',
+            'float-delayed': 'floatSlow 8.5s ease-in-out 2s infinite',
+            'pulse-gold': 'pulseGold 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'marquee': 'marquee 28s linear infinite',
+            'shimmer': 'shimmer 2.8s linear infinite',
+            'spin-slow': 'spin 24s linear infinite',
+          },
+          keyframes: {
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            pulseGold: {
+              '0%, 100%': { opacity: '1', boxShadow: '0 0 0 0 rgba(245, 184, 0, 0.45)' },
+              '50%': { opacity: '0.85', boxShadow: '0 0 0 12px rgba(245, 184, 0, 0)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Custom Scrollbar & Global Dark Obsidian Aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #08090B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232732;
+      border-radius: 9999px;
+      border: 2px solid #08090B;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #F5B800;
+    }
+
+    body {
+      background-color: #0E0F12;
+      color: #F8FAFC;
+      overflow-x: hidden;
+    }
+
+    /* Architectural Blueprint Grid Background */
+    .blueprint-grid {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(245, 184, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(245, 184, 0, 0.04) 1px, transparent 1px);
+    }
+
+    /* Gold Gradient Text */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FDE047 0%, #F5B800 45%, #D99B00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Glassmorphism Cards with Subtle Gold Rim */
+    .glass-card {
+      background: linear-gradient(160deg, rgba(24, 27, 34, 0.85) 0%, rgba(14, 15, 18, 0.94) 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.45s ease, box-shadow 0.45s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(245, 184, 0, 0.45);
+      box-shadow: 0 22px 45px -15px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(245, 184, 0, 0.16);
+    }
+
+    /* Animated Logo SVG Path Drawing */
+    .logo-roof-path {
+      stroke-dasharray: 240;
+      stroke-dashoffset: 240;
+      animation: drawStroke 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .logo-hammer-path {
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: drawStroke 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+    }
+    @keyframes drawStroke {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* Scroll Reveal Utility Classes */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-scale.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Hero Image Ken Burns Slow Zoom */
+    .ken-burns {
+      animation: kenBurns 22s ease-in-out infinite alternate;
+    }
+    @keyframes kenBurns {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.08) translate(-1.5%, -1%); }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-obsidian-950">
+
+  <!-- ===================================================================== -->
+  <!-- TOP UTILITY BAR (Location, Phone, Email) -->
+  <!-- ===================================================================== -->
+  <div class="hidden lg:block bg-obsidian-950 border-b border-white/5 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-6 py-2.5 flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-location-dot text-gold-500"></i>
+          <span>Serving <strong class="text-alabaster font-medium">Tembisa</strong> & Surrounding Gauteng Communities</span>
+        </span>
+        <span class="text-white/15">|</span>
+        <span class="font-mono text-[11px] uppercase tracking-wider text-gold-500/90">
+          Strong Foundations • Better Living
+        </span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="mailto:Info@mboneniconstruction.com" class="hover:text-gold-400 transition-colors flex items-center gap-2">
+          <i class="fa-solid fa-envelope text-gold-500"></i>
+          <span>Info@mboneniconstruction.com</span>
+        </a>
+        <span class="text-white/15">|</span>
+        <a href="tel:0766333420" class="hover:text-gold-400 transition-colors flex items-center gap-2 font-semibold text-alabaster">
+          <i class="fa-solid fa-phone text-gold-500"></i>
+          <span>076 633 3420</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- STICKY GLASSMORPHISM NAVBAR + BESPOKE INLINE SVG LOGO -->
+  <!-- ===================================================================== -->
+  <header id="navbar" class="sticky top-0 z-50 transition-all duration-300 bg-obsidian-900/80 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Custom Designed Inline SVG Architectural Logo -->
+        <a href="#home" class="group flex items-center gap-3.5 focus:outline-none" aria-label="Mboneni Construction Home">
+          <div class="relative w-12 h-12 rounded-xl bg-gradient-to-br from-obsidian-800 to-obsidian-950 border border-gold-500/40 flex items-center justify-center shadow-lg shadow-gold-500/10 group-hover:border-gold-400 group-hover:shadow-gold-500/25 transition-all duration-500">
+            <!-- Bespoke Architectural Roofline + Window + Craftsman Hammer Emblem -->
+            <svg class="w-9 h-9 overflow-visible" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="goldBrandGrad" x1="4" y1="8" x2="60" y2="56" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#FDE047"/>
+                  <stop offset="50%" stop-color="#F5B800"/>
+                  <stop offset="100%" stop-color="#D99B00"/>
+                </linearGradient>
+              </defs>
+              <!-- Outer Architectural Frame Corner Accents -->
+              <path d="M6 18V10C6 7.79086 7.79086 6 10 6H18" stroke="url(#goldBrandGrad)" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+              <path d="M58 46V54C58 56.2091 56.2091 58 54 58H46" stroke="url(#goldBrandGrad)" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+              
+              <!-- Chimney & Primary Gable Roofline -->
+              <path class="logo-roof-path" d="M16 31V21H21V26.5M8 36L32 15L56 36" stroke="url(#goldBrandGrad)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+              
+              <!-- Secondary Sleek Inner Roofline -->
+              <path d="M15 38L32 23L49 38" stroke="#F8FAFC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+              
+              <!-- Craftsman Hammer Silhouette Integrated on Right Slope -->
+              <path class="logo-hammer-path" d="M41 18.5L46.5 13C48.5 11.5 51.5 12 53.5 14L55 15.5L51.5 19L49.5 17L44 22.5" stroke="url(#goldBrandGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              
+              <!-- Four-Pane Architectural Window -->
+              <rect x="27" y="33" width="4.2" height="4.2" rx="0.8" fill="#F8FAFC"/>
+              <rect x="32.8" y="33" width="4.2" height="4.2" rx="0.8" fill="url(#goldBrandGrad)"/>
+              <rect x="27" y="38.8" width="4.2" height="4.2" rx="0.8" fill="url(#goldBrandGrad)"/>
+              <rect x="32.8" y="38.8" width="4.2" height="4.2" rx="0.8" fill="#F8FAFC"/>
+
+              <!-- Solid Foundation Base Line -->
+              <path d="M12 49H52" stroke="url(#goldBrandGrad)" stroke-width="3.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight leading-none text-gold-gradient">
+              MBONENI
+            </span>
+            <span class="font-sans font-bold text-[10px] sm:text-[11px] tracking-[0.26em] text-alabaster mt-1">
+              CONSTRUCTION
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a href="#home" class="hover:text-gold-400 transition-colors py-2">Home</a>
+          <a href="#services" class="hover:text-gold-400 transition-colors py-2">Services</a>
+          <a href="#showcase" class="hover:text-gold-400 transition-colors py-2">Craftsmanship</a>
+          <a href="#contact" class="hover:text-gold-400 transition-colors py-2">Free Consultation</a>
+        </nav>
+
+        <!-- Primary CTA + Mobile Menu Button -->
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-400 text-obsidian-950 font-bold text-sm shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <span>Free Quote</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+
+          <button id="mobile-menu-btn" type="button" class="md:hidden p-3 rounded-xl bg-obsidian-800 border border-white/10 text-alabaster hover:border-gold-500/50 transition-colors" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars text-lg" id="mobile-menu-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-obsidian-950/95 backdrop-blur-2xl border-b border-white/10 px-6 pt-4 pb-6 space-y-3">
+      <a href="#home" class="mobile-nav-link block py-2.5 text-base font-medium text-alabaster hover:text-gold-400 border-b border-white/5">Home</a>
+      <a href="#services" class="mobile-nav-link block py-2.5 text-base font-medium text-alabaster hover:text-gold-400 border-b border-white/5">Our Services</a>
+      <a href="#showcase" class="mobile-nav-link block py-2.5 text-base font-medium text-alabaster hover:text-gold-400 border-b border-white/5">Craftsmanship</a>
+      <a href="#contact" class="mobile-nav-link block py-2.5 text-base font-medium text-alabaster hover:text-gold-400">Request Free Quote</a>
+      <div class="pt-3 flex flex-col gap-2.5">
+        <a href="tel:0766333420" class="w-full py-3 rounded-xl bg-gold-500 text-obsidian-950 font-bold text-center flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone"></i> Call 076 633 3420
+        </a>
+        <a href="mailto:Info@mboneniconstruction.com" class="w-full py-3 rounded-xl bg-obsidian-800 border border-white/10 text-alabaster text-sm font-medium text-center">
+          Info@mboneniconstruction.com
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- HERO SECTION WITH INTERACTIVE PARTICLE BLUEPRINT CANVAS & PARALLAX -->
+  <!-- ===================================================================== -->
+  <section id="home" class="relative min-h-[92vh] flex items-center overflow-hidden blueprint-grid">
+    <!-- Interactive Canvas Particle Blueprint Mesh -->
+    <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-65"></canvas>
+
+    <!-- Ambient Radial Glows -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-gold-500/15 rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-[34rem] h-[34rem] bg-amber-500/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+        <!-- Left Hero Copy & Kinetic Headlines -->
+        <div class="lg:col-span-7 space-y-7">
+          <!-- Pill Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-obsidian-800/90 border border-gold-500/30 shadow-lg backdrop-blur-md">
+            <span class="w-2.5 h-2.5 rounded-full bg-gold-500 animate-pulse-gold"></span>
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold">
+              Building • Renovating • Improving
+            </span>
+          </div>
+
+          <!-- Primary Headline -->
+          <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] leading-[1.06] tracking-tight text-alabaster">
+            Your Dream Home <br />
+            <span class="text-gold-gradient">Is Possible.</span>
+          </h1>
+
+          <!-- Sub-headline from Flyer -->
+          <p class="text-lg sm:text-xl text-slate-300 font-light max-w-2xl leading-relaxed">
+            <strong class="text-alabaster font-semibold">Quality Work, Lasting Results!</strong> From ground-up architectural builds to precision renovations in <span class="text-gold-400 font-medium">Tembisa</span>, we turn your ideas into reality. <em class="text-slate-200 not-italic border-b border-gold-500/40">Your home, our priority!</em>
+          </p>
+
+          <!-- Primary Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <a href="#contact" class="group px-7 py-4 rounded-2xl bg-gradient-to-r from-gold-500 via-gold-400 to-amber-500 text-obsidian-950 font-extrabold text-base shadow-xl shadow-gold-500/25 hover:shadow-gold-500/45 transition-all flex items-center justify-center gap-3">
+              <span>Request Free Site Quote</span>
+              <i class="fa-solid fa-compass-drafting group-hover:rotate-12 transition-transform"></i>
+            </a>
+
+            <a href="https://wa.me/27766333420?text=Hello%20Mboneni%20Construction,%20I%20would%20like%20to%20enquire%20about%20a%20construction%20or%20renovation%20project." target="_blank" rel="noopener noreferrer" class="px-7 py-4 rounded-2xl bg-obsidian-800/90 hover:bg-obsidian-700 border border-white/15 hover:border-emerald-400/50 text-alabaster font-semibold text-base transition-all flex items-center justify-center gap-3 backdrop-blur-md">
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+              <span>WhatsApp: 076 633 3420</span>
+            </a>
+          </div>
+
+          <!-- Verified Craftsmanship & Coverage Pillars -->
+          <div class="grid grid-cols-3 gap-4 sm:gap-8 pt-6 border-t border-white/10 max-w-xl">
+            <div>
+              <div class="font-display font-extrabold text-xl sm:text-2xl text-gold-400 flex items-baseline">
+                <span class="counter" data-target="100">0</span><span>%</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-400 mt-1">Structural Integrity</p>
+            </div>
+            <div>
+              <div class="font-display font-extrabold text-xl sm:text-2xl text-alabaster flex items-baseline">
+                <span class="counter" data-target="6">0</span><span class="text-gold-500 ml-1.5">Core Trades</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-400 mt-1">Complete Building Care</p>
+            </div>
+            <div>
+              <div class="font-display font-extrabold text-xl sm:text-2xl text-alabaster flex items-baseline">
+                <span class="text-gold-400">Tembisa</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-400 mt-1">& Gauteng Coverage</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase: Luxury Architectural Framing + Floating Cards -->
+        <div class="lg:col-span-5 relative">
+          <!-- Decorative Rotating Architectural Ring -->
+          <div class="hidden sm:block absolute -top-8 -right-8 w-44 h-44 border border-dashed border-gold-500/30 rounded-full animate-spin-slow pointer-events-none"></div>
+
+          <!-- Main Architectural Image Frame -->
+          <div class="relative rounded-3xl overflow-hidden border border-gold-500/30 shadow-2xl shadow-black/80 bg-obsidian-800 aspect-[4/4.6]">
+            <!-- Custom Architectural House Visual Matching the Poster's Cream & Charcoal Tiled-Roof SA House -->
+            <div class="w-full h-full ken-burns relative">
+              <svg viewBox="0 0 800 920" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Single-story South African cream plastered house with dark charcoal hipped tiled roof and brick pillars">
+                <defs>
+                  <linearGradient id="saSkyGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0C6CF2"/>
+                    <stop offset="55%" stop-color="#4AA3FF"/>
+                    <stop offset="100%" stop-color="#B9E0FF"/>
+                  </linearGradient>
+                  <linearGradient id="charcoalRoofGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#36393F"/>
+                    <stop offset="55%" stop-color="#222428"/>
+                    <stop offset="100%" stop-color="#141619"/>
+                  </linearGradient>
+                  <linearGradient id="creamWallGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#F7F1E3"/>
+                    <stop offset="100%" stop-color="#E5DAC3"/>
+                  </linearGradient>
+                  <linearGradient id="pavingGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#B8B2A6"/>
+                    <stop offset="100%" stop-color="#8C867B"/>
+                  </linearGradient>
+                  <pattern id="roofTiles" width="24" height="14" patternUnits="userSpaceOnUse">
+                    <path d="M0 14 Q12 6 24 14" fill="none" stroke="#111215" stroke-width="1.8"/>
+                    <path d="M0 7 Q12 0 24 7" fill="none" stroke="#474B53" stroke-width="1"/>
+                  </pattern>
+                  <pattern id="charcoalBrick" width="26" height="12" patternUnits="userSpaceOnUse">
+                    <rect width="26" height="12" fill="#464A52"/>
+                    <path d="M0 6 H26 M13 0 V6 M0 6 V12 M26 6 V12" stroke="#26292E" stroke-width="1.4"/>
+                  </pattern>
+                  <pattern id="pavingPattern" width="36" height="18" patternUnits="userSpaceOnUse">
+                    <path d="M0 9 H36 M18 0 V9 M9 9 V18 M27 9 V18" stroke="#6E695F" stroke-width="1.2" opacity="0.55"/>
+                  </pattern>
+                </defs>
+
+                <!-- Bright Blue South African Sky & Soft White Clouds -->
+                <rect width="800" height="630" fill="url(#saSkyGrad)"/>
+                <g fill="#FFFFFF" opacity="0.88">
+                  <ellipse cx="160" cy="145" rx="95" ry="28"/>
+                  <ellipse cx="215" cy="135" rx="65" ry="24"/>
+                  <ellipse cx="615" cy="115" rx="115" ry="30"/>
+                  <ellipse cx="555" cy="126" rx="70" ry="22"/>
+                  <ellipse cx="685" cy="128" rx="60" ry="20"/>
+                </g>
+
+                <!-- Distant Neighbouring Roofline & Subtle Greenery -->
+                <polygon points="0,565 65,530 145,565" fill="#2E3239"/>
+                <rect x="0" y="565" width="145" height="65" fill="#DFD5C0"/>
+                <circle cx="95" cy="545" r="46" fill="#2D6A32"/>
+                <circle cx="62" cy="560" r="34" fill="#3B8240"/>
+
+                <!-- Paved Driveway / Front Yard & Lawn Strip -->
+                <rect x="0" y="610" width="800" height="310" fill="url(#pavingGrad)"/>
+                <rect x="0" y="610" width="800" height="310" fill="url(#pavingPattern)"/>
+                <!-- Neat Green Lawn & Garden Border Along House Front -->
+                <path d="M65,612 Q240,602 420,612 L420,635 Q240,642 65,632 Z" fill="#3B873E"/>
+                <path d="M560,612 Q680,605 795,612 L795,634 Q680,640 560,632 Z" fill="#3B873E"/>
+
+                <!-- Ground Shadow Under House -->
+                <rect x="75" y="606" width="665" height="14" rx="4" fill="#1E2024" opacity="0.45"/>
+
+                <!-- MAIN SINGLE-STORY CREAM PLASTERED HOUSE BODY -->
+                <!-- Left Wing Wall -->
+                <rect x="95" y="425" width="275" height="185" fill="url(#creamWallGrad)"/>
+                <!-- Right Wing Wall -->
+                <rect x="550" y="430" width="175" height="180" fill="url(#creamWallGrad)"/>
+                <!-- Recessed Front Porch / Stoep Interior -->
+                <rect x="365" y="425" width="205" height="185" fill="#D5C8B0"/>
+
+                <!-- Charcoal Face-Brick Lower Skirting / Plinth -->
+                <rect x="95" y="584" width="275" height="26" fill="url(#charcoalBrick)"/>
+                <rect x="550" y="584" width="175" height="26" fill="url(#charcoalBrick)"/>
+
+                <!-- DARK CHARCOAL HIPPED TILED ROOF (Matches Poster Silhouette) -->
+                <!-- Main Right-Center Hipped Roof -->
+                <polygon points="315,432 485,305 748,432" fill="url(#charcoalRoofGrad)"/>
+                <polygon points="315,432 485,305 748,432" fill="url(#roofTiles)"/>
+                <!-- Left Wing Hipped Roof -->
+                <polygon points="72,432 230,322 395,432" fill="url(#charcoalRoofGrad)"/>
+                <polygon points="72,432 230,322 395,432" fill="url(#roofTiles)"/>
+                <!-- Roof Ridge Caps & White Fascia Trim -->
+                <line x1="230" y1="322" x2="310" y2="322" stroke="#4D525C" stroke-width="5" stroke-linecap="round"/>
+                <line x1="485" y1="305" x2="605" y2="305" stroke="#4D525C" stroke-width="5" stroke-linecap="round"/>
+                <rect x="70" y="428" width="680" height="7" rx="2" fill="#F8F5EE"/>
+
+                <!-- Porch Fascia Beam -->
+                <rect x="355" y="435" width="225" height="32" fill="#EFE7D6" stroke="#D5C9B2" stroke-width="1.5"/>
+
+                <!-- CHARCOAL FACE-BRICK PORCH PILLARS (Signature Poster Detail) -->
+                <!-- Left Porch Pillar -->
+                <rect x="358" y="467" width="38" height="125" fill="url(#charcoalBrick)"/>
+                <rect x="354" y="465" width="46" height="8" fill="#F5EFE2"/>
+                <rect x="353" y="592" width="48" height="18" fill="#E6DEC8"/>
+                <!-- Right Porch Pillar -->
+                <rect x="542" y="467" width="38" height="125" fill="url(#charcoalBrick)"/>
+                <rect x="538" y="465" width="46" height="8" fill="#F5EFE2"/>
+                <rect x="537" y="592" width="48" height="18" fill="#E6DEC8"/>
+
+                <!-- Wooden Front Door & Steps Inside Covered Porch -->
+                <rect x="444" y="486" width="54" height="112" rx="2" fill="#5C3419" stroke="#3B1F0D" stroke-width="3"/>
+                <rect x="452" y="495" width="38" height="42" fill="#734222" stroke="#472611" stroke-width="1.5"/>
+                <rect x="452" y="545" width="38" height="42" fill="#734222" stroke="#472611" stroke-width="1.5"/>
+                <circle cx="490" cy="542" r="3" fill="#F5B800"/>
+                <!-- Porch Steps -->
+                <rect x="415" y="598" width="112" height="7" fill="#D8D0C0"/>
+                <rect x="408" y="605" width="126" height="7" fill="#C4BCB0"/>
+
+                <!-- Warm Exterior Wall Lights on Pillars -->
+                <rect x="372" y="502" width="10" height="18" rx="2" fill="#1E2025"/>
+                <circle cx="377" cy="511" r="3.5" fill="#FDE047"/>
+                <rect x="556" y="502" width="10" height="18" rx="2" fill="#1E2025"/>
+                <circle cx="561" cy="511" r="3.5" fill="#FDE047"/>
+
+                <!-- DARK ALUMINIUM-FRAMED WINDOWS (Poster Style) -->
+                <!-- Left Main Window -->
+                <rect x="155" y="476" width="128" height="88" rx="2" fill="#1F242D" stroke="#F7F3EA" stroke-width="4"/>
+                <rect x="163" y="484" width="53" height="72" fill="#2A3E52"/>
+                <rect x="222" y="484" width="53" height="72" fill="#2A3E52"/>
+                <!-- Glass Reflection Sheen -->
+                <polygon points="163,484 192,484 163,530" fill="#7CC0FF" opacity="0.25"/>
+                <polygon points="222,484 251,484 222,530" fill="#7CC0FF" opacity="0.25"/>
+
+                <!-- Right Side Window -->
+                <rect x="615" y="478" width="76" height="84" rx="2" fill="#1F242D" stroke="#F7F3EA" stroke-width="4"/>
+                <rect x="623" y="486" width="60" height="68" fill="#2A3E52"/>
+                <polygon points="623,486 655,486 623,532" fill="#7CC0FF" opacity="0.25"/>
+
+                <!-- Neat Ornamental Shrubs in Front Garden -->
+                <g fill="#2F7A34">
+                  <ellipse cx="145" cy="606" rx="22" ry="13"/>
+                  <ellipse cx="215" cy="608" rx="26" ry="12"/>
+                  <ellipse cx="295" cy="606" rx="22" ry="13"/>
+                  <ellipse cx="645" cy="607" rx="25" ry="13"/>
+                </g>
+              </svg>
+            </div>
+            <!-- Rich Obsidian Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/25 to-transparent"></div>
+
+            <!-- Architectural Blueprint Overlay Lines -->
+            <div class="absolute top-5 left-5 right-5 flex items-center justify-between text-[11px] font-mono text-alabaster/90 bg-obsidian-950/75 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10">
+              <span class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-gold-500"></i> TEMBISA, GP
+              </span>
+              <span class="text-gold-400">YOUR DREAM HOME</span>
+            </div>
+
+            <!-- Bottom Overlay Tagline -->
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="font-mono text-xs uppercase tracking-widest text-gold-400 mb-1">Quality Work • Lasting Results</p>
+              <h2 class="font-display font-bold text-xl sm:text-2xl text-alabaster">
+                Strong Foundations • Better Living
+              </h2>
+            </div>
+          </div>
+
+          <!-- Floating Badge 1: Complete Building Solutions -->
+          <div class="animate-float-slow hidden sm:flex items-center gap-3.5 absolute -left-8 bottom-24 glass-card px-4 py-3.5 rounded-2xl shadow-2xl">
+            <div class="w-11 h-11 rounded-xl bg-gold-500/15 border border-gold-500/40 flex items-center justify-center text-gold-400">
+              <i class="fa-solid fa-shield-halved text-lg"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400">End-to-End Execution</p>
+              <p class="text-sm font-bold text-alabaster">Builds, Renovations & MEP</p>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2: Direct Contact -->
+          <div class="animate-float-delayed hidden sm:flex items-center gap-3 absolute -right-4 top-20 glass-card px-4 py-3 rounded-2xl shadow-2xl">
+            <div class="w-9 h-9 rounded-lg bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
+              <i class="fa-solid fa-check-double text-sm"></i>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-alabaster">Free On-Site Quotes</p>
+              <p class="text-[11px] text-gold-400 font-mono">076 633 3420</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- KINETIC GOLD MARQUEE RIBBON -->
+  <!-- ===================================================================== -->
+  <div class="bg-gold-500 text-obsidian-950 py-3.5 overflow-hidden border-y border-gold-400 select-none">
+    <div class="flex whitespace-nowrap animate-marquee font-display font-extrabold text-xs sm:text-sm uppercase tracking-[0.2em]">
+      <div class="flex items-center gap-8 mx-4">
+        <span>Building Houses</span>
+        <span>•</span>
+        <span>Interior & Exterior Painting</span>
+        <span>•</span>
+        <span>Home Renovations</span>
+        <span>•</span>
+        <span>Precision Carpentry</span>
+        <span>•</span>
+        <span>Plumbing Installations & Repairs</span>
+        <span>•</span>
+        <span>Electrical & Switchboard Upgrades</span>
+        <span>•</span>
+        <span>Tembisa • Call 076 633 3420</span>
+        <span>•</span>
+      </div>
+      <div class="flex items-center gap-8 mx-4" aria-hidden="true">
+        <span>Building Houses</span>
+        <span>•</span>
+        <span>Interior & Exterior Painting</span>
+        <span>•</span>
+        <span>Home Renovations</span>
+        <span>•</span>
+        <span>Precision Carpentry</span>
+        <span>•</span>
+        <span>Plumbing Installations & Repairs</span>
+        <span>•</span>
+        <span>Electrical & Switchboard Upgrades</span>
+        <span>•</span>
+        <span>Tembisa • Call 076 633 3420</span>
+        <span>•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- OUR SERVICES SECTION (ALL 6 POSTER TRADES WITH CLEAN REAL PHOTOS) -->
+  <!-- ===================================================================== -->
+  <section id="services" class="py-24 relative blueprint-grid">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+        <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold-400">
+          // Building • Renovating • Improving
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-alabaster mt-3">
+          Our <span class="text-gold-gradient">Core Services</span>
+        </h2>
+        <p class="text-slate-300 mt-4 text-sm sm:text-base leading-relaxed">
+          From new builds to renovations, we turn your ideas into reality. Explore our six specialized residential construction and maintenance trades.
+        </p>
+      </div>
+
+      <!-- 6 Service Cards Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- 1. BUILDING HOUSES -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal-up">
+          <div>
+            <div class="relative h-56 overflow-hidden bg-obsidian-800">
+              <!-- Poster-Matched Single-Story Cream & Charcoal Tiled-Roof SA House -->
+              <svg viewBox="0 0 800 500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Single-story South African cream plastered house with charcoal tiled roof and brick pillars">
+                <defs>
+                  <linearGradient id="cardSkyGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#1474F3"/>
+                    <stop offset="100%" stop-color="#9BD3FF"/>
+                  </linearGradient>
+                  <linearGradient id="cardRoofGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#35383E"/>
+                    <stop offset="100%" stop-color="#181A1E"/>
+                  </linearGradient>
+                  <pattern id="cardBrick" width="22" height="10" patternUnits="userSpaceOnUse">
+                    <rect width="22" height="10" fill="#464A52"/>
+                    <path d="M0 5 H22 M11 0 V5 M0 5 V10 M22 5 V10" stroke="#25282D" stroke-width="1.2"/>
+                  </pattern>
+                </defs>
+                <rect width="800" height="365" fill="url(#cardSkyGrad)"/>
+                <ellipse cx="150" cy="75" rx="80" ry="20" fill="#FFFFFF" opacity="0.85"/>
+                <ellipse cx="640" cy="65" rx="95" ry="22" fill="#FFFFFF" opacity="0.85"/>
+                <!-- Paved Yard & Grass Strip -->
+                <rect x="0" y="355" width="800" height="145" fill="#A6A095"/>
+                <rect x="85" y="352" width="290" height="14" rx="4" fill="#3B873E"/>
+                <rect x="545" y="352" width="180" height="14" rx="4" fill="#3B873E"/>
+                <!-- Cream Plastered Walls -->
+                <rect x="105" y="210" width="265" height="146" fill="#F2EAD8"/>
+                <rect x="540" y="215" width="175" height="141" fill="#F2EAD8"/>
+                <rect x="365" y="210" width="185" height="146" fill="#D7CCB6"/>
+                <!-- Charcoal Brick Plinth -->
+                <rect x="105" y="334" width="265" height="22" fill="url(#cardBrick)"/>
+                <rect x="540" y="334" width="175" height="22" fill="url(#cardBrick)"/>
+                <!-- Charcoal Hipped Tiled Roof -->
+                <polygon points="325,216 485,115 735,216" fill="url(#cardRoofGrad)"/>
+                <polygon points="82,216 235,130 390,216" fill="url(#cardRoofGrad)"/>
+                <rect x="80" y="213" width="658" height="6" fill="#FAF7F0"/>
+                <!-- Covered Stoep Beam & Charcoal Brick Pillars -->
+                <rect x="358" y="219" width="202" height="24" fill="#EFE7D6"/>
+                <rect x="362" y="243" width="32" height="100" fill="url(#cardBrick)"/>
+                <rect x="522" y="243" width="32" height="100" fill="url(#cardBrick)"/>
+                <!-- Wooden Front Door -->
+                <rect x="436" y="260" width="46" height="94" fill="#5C3419" stroke="#3A1E0C" stroke-width="2.5"/>
+                <!-- Dark-Framed Windows -->
+                <rect x="165" y="252" width="115" height="72" fill="#1E242D" stroke="#FAF7F0" stroke-width="3.5"/>
+                <rect x="172" y="259" width="47" height="58" fill="#2E455C"/>
+                <rect x="225" y="259" width="47" height="58" fill="#2E455C"/>
+                <rect x="602" y="254" width="68" height="68" fill="#1E242D" stroke="#FAF7F0" stroke-width="3.5"/>
+                <rect x="609" y="261" width="54" height="54" fill="#2E455C"/>
+              </svg>
+              <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+              <div class="absolute top-4 left-4 w-11 h-11 rounded-xl bg-gold-500 text-obsidian-950 flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-house-chimney text-lg"></i>
+              </div>
+            </div>
+            <div class="p-6 sm:p-7">
+              <h3 class="font-display font-extrabold text-xl text-gold-400 tracking-tight">
+                BUILDING HOUSES
+              </h3>
+              <p class="text-slate-300 text-sm mt-2.5 leading-relaxed">
+                New builds, extensions and structural work constructed with solid foundations and lasting quality.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 sm:px-7 pb-6 pt-2">
+            <button type="button" onclick="selectServiceForQuote('Building Houses')" class="w-full py-3 px-4 rounded-xl bg-obsidian-800 hover:bg-gold-500 text-alabaster hover:text-obsidian-950 border border-white/10 hover:border-gold-500 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-between">
+              <span>Enquire About Building</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. PAINTING -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal-up" style="transition-delay: 80ms;">
+          <div>
+            <div class="relative h-56 overflow-hidden bg-obsidian-800">
+              <img
+                src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=85"
+                onerror="this.src='https://placehold.co/800x500/181B22/F5B800?text=PAINTING+SERVICES'"
+                alt="Painter Rolling Fresh Yellow Paint on Wall"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+              <div class="absolute top-4 left-4 w-11 h-11 rounded-xl bg-gold-500 text-obsidian-950 flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-paint-roller text-lg"></i>
+              </div>
+            </div>
+            <div class="p-6 sm:p-7">
+              <h3 class="font-display font-extrabold text-xl text-gold-400 tracking-tight">
+                PAINTING
+              </h3>
+              <p class="text-slate-300 text-sm mt-2.5 leading-relaxed">
+                Interior &amp; exterior painting for a fresh new look with crisp lines, smooth preparation, and weather-resistant coats.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 sm:px-7 pb-6 pt-2">
+            <button type="button" onclick="selectServiceForQuote('Painting')" class="w-full py-3 px-4 rounded-xl bg-obsidian-800 hover:bg-gold-500 text-alabaster hover:text-obsidian-950 border border-white/10 hover:border-gold-500 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-between">
+              <span>Enquire About Painting</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. RENOVATIONS -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal-up" style="transition-delay: 160ms;">
+          <div>
+            <div class="relative h-56 overflow-hidden bg-obsidian-800">
+              <img
+                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=900&q=85"
+                onerror="this.src='https://placehold.co/800x500/181B22/F5B800?text=HOME+RENOVATIONS'"
+                alt="Bright Indoor Room Renovation with Ladder and Fresh Finishes"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+              <div class="absolute top-4 left-4 w-11 h-11 rounded-xl bg-gold-500 text-obsidian-950 flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
+              </div>
+            </div>
+            <div class="p-6 sm:p-7">
+              <h3 class="font-display font-extrabold text-xl text-gold-400 tracking-tight">
+                RENOVATIONS
+              </h3>
+              <p class="text-slate-300 text-sm mt-2.5 leading-relaxed">
+                Upgrade your space and add value to your property with modern room makeovers, tiling, plastering, and structural updates.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 sm:px-7 pb-6 pt-2">
+            <button type="button" onclick="selectServiceForQuote('Renovations')" class="w-full py-3 px-4 rounded-xl bg-obsidian-800 hover:bg-gold-500 text-alabaster hover:text-obsidian-950 border border-white/10 hover:border-gold-500 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-between">
+              <span>Enquire About Renovations</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. CARPENTRY -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal-up">
+          <div>
+            <div class="relative h-56 overflow-hidden bg-obsidian-800">
+              <img
+                src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=900&q=85"
+                onerror="this.src='https://placehold.co/800x500/181B22/F5B800?text=CARPENTRY+WORK'"
+                alt="Carpenter Measuring and Cutting Wood Timber Planks"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+              <div class="absolute top-4 left-4 w-11 h-11 rounded-xl bg-gold-500 text-obsidian-950 flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-ruler-combined text-lg"></i>
+              </div>
+            </div>
+            <div class="p-6 sm:p-7">
+              <h3 class="font-display font-extrabold text-xl text-gold-400 tracking-tight">
+                CARPENTRY
+              </h3>
+              <p class="text-slate-300 text-sm mt-2.5 leading-relaxed">
+                Doors, cabinets, ceilings, roof structures and more—measured, cut, and fitted with precision craftsmanship.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 sm:px-7 pb-6 pt-2">
+            <button type="button" onclick="selectServiceForQuote('Carpentry')" class="w-full py-3 px-4 rounded-xl bg-obsidian-800 hover:bg-gold-500 text-alabaster hover:text-obsidian-950 border border-white/10 hover:border-gold-500 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-between">
+              <span>Enquire About Carpentry</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. PLUMBING -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal-up" style="transition-delay: 80ms;">
+          <div>
+            <div class="relative h-56 overflow-hidden bg-obsidian-800">
+              <img
+                src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=900&q=85"
+                onerror="this.src='https://placehold.co/800x500/181B22/F5B800?text=PLUMBING+SERVICES'"
+                alt="Plumber Tightening Sink Pipes with Wrench"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+              <div class="absolute top-4 left-4 w-11 h-11 rounded-xl bg-gold-500 text-obsidian-950 flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-faucet-drip text-lg"></i>
+              </div>
+            </div>
+            <div class="p-6 sm:p-7">
+              <h3 class="font-display font-extrabold text-xl text-gold-400 tracking-tight">
+                PLUMBING
+              </h3>
+              <p class="text-slate-300 text-sm mt-2.5 leading-relaxed">
+                Installations, repairs and maintenance for kitchens, bathrooms, drainage lines, geysers, and residential water systems.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 sm:px-7 pb-6 pt-2">
+            <button type="button" onclick="selectServiceForQuote('Plumbing')" class="w-full py-3 px-4 rounded-xl bg-obsidian-800 hover:bg-gold-500 text-alabaster hover:text-obsidian-950 border border-white/10 hover:border-gold-500 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-between">
+              <span>Enquire About Plumbing</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. ELECTRICITY -->
+        <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group reveal-up" style="transition-delay: 160ms;">
+          <div>
+            <div class="relative h-56 overflow-hidden bg-obsidian-800">
+              <img
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=85"
+                onerror="this.src='https://placehold.co/800x500/181B22/F5B800?text=ELECTRICAL+SERVICES'"
+                alt="Electrician Working on Residential Switchboard and Wiring"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+              <div class="absolute top-4 left-4 w-11 h-11 rounded-xl bg-gold-500 text-obsidian-950 flex items-center justify-center shadow-lg">
+                <i class="fa-solid fa-bolt text-lg"></i>
+              </div>
+            </div>
+            <div class="p-6 sm:p-7">
+              <h3 class="font-display font-extrabold text-xl text-gold-400 tracking-tight">
+                ELECTRICITY
+              </h3>
+              <ul class="text-slate-300 text-xs sm:text-sm mt-2.5 space-y-1.5">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Electrical Installations</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Repairs &amp; Maintenance</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Switchboard Upgrades</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-400 text-xs"></i> Lighting Solutions</li>
+              </ul>
+            </div>
+          </div>
+          <div class="px-6 sm:px-7 pb-6 pt-2">
+            <button type="button" onclick="selectServiceForQuote('Electricity')" class="w-full py-3 px-4 rounded-xl bg-obsidian-800 hover:bg-gold-500 text-alabaster hover:text-obsidian-950 border border-white/10 hover:border-gold-500 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-between">
+              <span>Enquire About Electrical</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- CRAFTSMANSHIP SHOWCASE GALLERY (CLEAN POSTER-MATCHED PHOTO COLLAGE) -->
+  <!-- ===================================================================== -->
+  <section id="showcase" class="py-24 bg-obsidian-950 border-t border-white/10 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal-up">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold-400">
+            // On-Site Craftsmanship
+          </span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-alabaster mt-3">
+            Quality Work, <span class="text-gold-gradient">Lasting Results!</span>
+          </h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md leading-relaxed">
+          Clean, honest workmanship across every stage of your home—from fresh exterior builds and vibrant paint finishes to tidy carpentry, plumbing, and wiring.
+        </p>
+      </div>
+
+      <!-- Simple 4-Tile Poster-Inspired Trade Photo Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-up">
+
+        <!-- Tile 1: Yellow Wall Painting -->
+        <div class="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold-500/50 bg-obsidian-900 aspect-[4/4.5]">
+          <img
+            src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=700&q=85"
+            onerror="this.src='https://placehold.co/600x680/181B22/F5B800?text=PAINTING'"
+            alt="Interior Wall Painting with Roller"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-gold-400">Painting</span>
+            <h3 class="font-display font-bold text-base text-alabaster">Fresh Interior &amp; Exterior Coats</h3>
+          </div>
+        </div>
+
+        <!-- Tile 2: Indoor Room Renovation -->
+        <div class="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold-500/50 bg-obsidian-900 aspect-[4/4.5]">
+          <img
+            src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=700&q=85"
+            onerror="this.src='https://placehold.co/600x680/181B22/F5B800?text=RENOVATIONS'"
+            alt="Room Renovation with Ladder and Bright Natural Light"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-gold-400">Renovations</span>
+            <h3 class="font-display font-bold text-base text-alabaster">Modern Living Space Upgrades</h3>
+          </div>
+        </div>
+
+        <!-- Tile 3: Carpentry Measuring & Woodwork -->
+        <div class="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold-500/50 bg-obsidian-900 aspect-[4/4.5]">
+          <img
+            src="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=700&q=85"
+            onerror="this.src='https://placehold.co/600x680/181B22/F5B800?text=CARPENTRY'"
+            alt="Carpenter Measuring Timber Wood Planks"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-gold-400">Carpentry</span>
+            <h3 class="font-display font-bold text-base text-alabaster">Roofs, Ceilings, Doors &amp; Cabinets</h3>
+          </div>
+        </div>
+
+        <!-- Tile 4: Plumbing Pipe Wrench Installation -->
+        <div class="group relative rounded-2xl overflow-hidden border border-white/10 hover:border-gold-500/50 bg-obsidian-900 aspect-[4/4.5]">
+          <img
+            src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=700&q=85"
+            onerror="this.src='https://placehold.co/600x680/181B22/F5B800?text=PLUMBING'"
+            alt="Plumber Fitting Sink Pipework with Wrench"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-gold-400">Plumbing</span>
+            <h3 class="font-display font-bold text-base text-alabaster">Clean Pipework &amp; Basin Fittings</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- CONTACT & QUOTE REQUEST SECTION (TEMBISA / 076 633 3420 / EMAIL) -->
+  <!-- ===================================================================== -->
+  <section id="contact" class="py-24 bg-obsidian-900 border-t border-white/10 relative blueprint-grid">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+        <span class="font-mono text-xs uppercase tracking-[0.25em] text-gold-400">
+          // Contact Us Today
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-alabaster mt-3">
+          Request a Free <span class="text-gold-gradient">Site Consultation</span>
+        </h2>
+        <p class="text-slate-300 mt-4 text-sm sm:text-base leading-relaxed">
+          Ready to build, renovate, or upgrade your home in Tembisa or surrounding Gauteng areas? Reach out directly by phone, WhatsApp, or email for a free on-site assessment.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+
+        <!-- Left Column: Direct Contact Cards (Phone, WhatsApp, Email, Location) -->
+        <div class="lg:col-span-5 space-y-5 reveal-up">
+
+          <!-- Phone & WhatsApp Card -->
+          <div class="glass-card rounded-3xl p-6 sm:p-7">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-gold-500/15 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0">
+                <i class="fa-solid fa-phone-volume text-xl"></i>
+              </div>
+              <div>
+                <p class="font-mono text-xs uppercase tracking-widest text-gold-400">Call or WhatsApp Today</p>
+                <a href="tel:0766333420" class="block font-display font-extrabold text-2xl sm:text-3xl text-alabaster hover:text-gold-400 transition-colors mt-1">
+                  076 633 3420
+                </a>
+                <p class="text-xs text-slate-400 mt-1.5">Available for site visits, consultations, and urgent repairs.</p>
+                <div class="mt-4 flex flex-wrap gap-2.5">
+                  <a href="tel:0766333420" class="px-4 py-2 rounded-xl bg-gold-500 hover:bg-gold-400 text-obsidian-950 font-bold text-xs transition-colors inline-flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                  </a>
+                  <a href="https://wa.me/27766333420?text=Hello%20Mboneni%20Construction,%20I%20would%20like%20to%20request%20a%20free%20quote." target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 font-bold text-xs transition-colors inline-flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email Card -->
+          <div class="glass-card rounded-3xl p-6 sm:p-7">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-gold-500/15 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0">
+                <i class="fa-solid fa-envelope text-xl"></i>
+              </div>
+              <div class="min-w-0 flex-1">
+                <p class="font-mono text-xs uppercase tracking-widest text-gold-400">Official Email</p>
+                <a href="mailto:Info@mboneniconstruction.com" class="block font-display font-bold text-base sm:text-lg text-alabaster hover:text-gold-400 transition-colors mt-1 break-all">
+                  Info@mboneniconstruction.com
+                </a>
+                <button type="button" onclick="copyEmailAddress()" class="mt-3 px-3.5 py-1.5 rounded-lg bg-obsidian-800 hover:bg-obsidian-700 border border-white/10 text-xs text-slate-300 hover:text-gold-400 transition-colors inline-flex items-center gap-2">
+                  <i class="fa-regular fa-copy"></i> Copy Email Address
+                </button>
+                <div id="copy-toast" class="hidden items-center gap-2 text-xs text-emerald-400 mt-2 font-medium">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span>Copied Info@mboneniconstruction.com to clipboard!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="glass-card rounded-3xl p-6 sm:p-7">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-gold-500/15 border border-gold-500/40 flex items-center justify-center text-gold-400 shrink-0">
+                <i class="fa-solid fa-location-dot text-xl"></i>
+              </div>
+              <div>
+                <p class="font-mono text-xs uppercase tracking-widest text-gold-400">Location &amp; Service Area</p>
+                <h3 class="font-display font-extrabold text-xl text-alabaster mt-1">TEMBISA</h3>
+                <p class="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed">
+                  Proudly based in Tembisa and serving homeowners across Midrand, Kempton Park, Centurion, and greater Gauteng.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Free Quote & Consultation Form -->
+        <div class="lg:col-span-7 glass-card rounded-3xl p-7 sm:p-10 reveal-up" style="transition-delay: 100ms;">
+          <h3 class="font-display font-extrabold text-2xl text-alabaster">Send Your Project Details</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1.5">
+            Fill in your details below and dispatch directly to <span class="text-gold-400">Info@mboneniconstruction.com</span> or via WhatsApp (<span class="text-alabaster font-semibold">076 633 3420</span>).
+          </p>
+
+          <form id="quote-form" class="mt-7 space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="client-name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Your Full Name *</label>
+                <input id="client-name" type="text" required placeholder="e.g. Thabo Mokoena" class="w-full px-4 py-3.5 rounded-xl bg-obsidian-950/90 border border-white/10 focus:border-gold-500 focus:outline-none text-sm text-alabaster placeholder-slate-500" />
+              </div>
+              <div>
+                <label for="client-phone" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Phone / WhatsApp Number *</label>
+                <input id="client-phone" type="tel" required placeholder="e.g. 076 633 3420" class="w-full px-4 py-3.5 rounded-xl bg-obsidian-950/90 border border-white/10 focus:border-gold-500 focus:outline-none text-sm text-alabaster placeholder-slate-500" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="client-service" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Service Needed *</label>
+                <select id="client-service" class="w-full px-4 py-3.5 rounded-xl bg-obsidian-950/90 border border-white/10 focus:border-gold-500 focus:outline-none text-sm text-alabaster">
+                  <option value="Building Houses">Building Houses (New Builds &amp; Extensions)</option>
+                  <option value="Painting">Painting (Interior &amp; Exterior)</option>
+                  <option value="Renovations">Renovations (Space Upgrades)</option>
+                  <option value="Carpentry">Carpentry (Doors, Ceilings, Roofs, Cabinets)</option>
+                  <option value="Plumbing">Plumbing (Installations &amp; Repairs)</option>
+                  <option value="Electricity">Electricity (Installations, Switchboards &amp; Lighting)</option>
+                </select>
+              </div>
+              <div>
+                <label for="client-area" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Suburb / Area</label>
+                <input id="client-area" type="text" placeholder="e.g. Tembisa" class="w-full px-4 py-3.5 rounded-xl bg-obsidian-950/90 border border-white/10 focus:border-gold-500 focus:outline-none text-sm text-alabaster placeholder-slate-500" />
+              </div>
+            </div>
+
+            <div>
+              <label for="client-message" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Project Description *</label>
+              <textarea id="client-message" rows="4" required placeholder="Tell us about your house build, renovation, painting, carpentry, plumbing, or electrical work..." class="w-full px-4 py-3.5 rounded-xl bg-obsidian-950/90 border border-white/10 focus:border-gold-500 focus:outline-none text-sm text-alabaster placeholder-slate-500"></textarea>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3.5 pt-2">
+              <button type="submit" class="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-gold-500 to-gold-400 text-obsidian-950 font-extrabold text-sm shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 transition-all flex items-center justify-center gap-2.5">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Prepare Email Quote</span>
+              </button>
+
+              <button type="button" onclick="sendViaWhatsApp()" class="flex-1 py-4 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 font-extrabold text-sm shadow-lg shadow-emerald-500/20 transition-all flex items-center justify-center gap-2.5">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Send via WhatsApp</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Confirmation & Direct Email Dispatch Box -->
+          <div id="form-confirmation" class="hidden mt-6 p-5 rounded-2xl bg-obsidian-950 border border-gold-500/40 space-y-3">
+            <div class="flex items-center gap-2.5 text-gold-400 font-bold text-sm">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Quote Enquiry Ready!</span>
+            </div>
+            <p id="confirmation-summary" class="text-xs text-slate-300 leading-relaxed"></p>
+            <div class="flex flex-wrap gap-3 pt-1">
+              <a id="mailto-dispatch-link" href="mailto:Info@mboneniconstruction.com" class="px-4 py-2.5 rounded-xl bg-gold-500 text-obsidian-950 font-bold text-xs inline-flex items-center gap-2">
+                <i class="fa-solid fa-envelope"></i> Open in Email App
+              </a>
+              <button type="button" onclick="sendViaWhatsApp()" class="px-4 py-2.5 rounded-xl bg-emerald-500 text-obsidian-950 font-bold text-xs inline-flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i> Send on WhatsApp (076 633 3420)
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER WITH INLINE SVG BRAND MARK & TEMBISA CONTACT DETAILS -->
+  <!-- ===================================================================== -->
+  <footer class="bg-obsidian-950 border-t border-white/10 pt-16 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+
+        <!-- Brand Column -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-obsidian-900 border border-gold-500/40 flex items-center justify-center">
+              <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 31V21H21V26.5M8 36L32 15L56 36" stroke="#F5B800" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M41 18.5L46.5 13C48.5 11.5 51.5 12 53.5 14L55 15.5L51.5 19L49.5 17L44 22.5" stroke="#F5B800" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="27" y="33" width="4.2" height="4.2" rx="0.8" fill="#F8FAFC"/>
+                <rect x="32.8" y="33" width="4.2" height="4.2" rx="0.8" fill="#F5B800"/>
+                <rect x="27" y="38.8" width="4.2" height="4.2" rx="0.8" fill="#F5B800"/>
+                <rect x="32.8" y="38.8" width="4.2" height="4.2" rx="0.8" fill="#F8FAFC"/>
+                <path d="M12 49H52" stroke="#F5B800" stroke-width="3.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <span class="font-display font-extrabold text-lg text-gold-gradient block leading-none">MBONENI</span>
+              <span class="font-sans font-bold text-[10px] tracking-[0.24em] text-alabaster">CONSTRUCTION</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Building • Renovating • Improving. Delivering quality work and lasting results across Tembisa and Gauteng.
+          </p>
+          <p class="font-mono text-xs text-gold-400">
+            Strong Foundations • Better Living
+          </p>
+        </div>
+
+        <!-- Services Links -->
+        <div>
+          <h4 class="font-display font-bold text-sm uppercase tracking-wider text-alabaster mb-4">Core Services</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400">
+            <li><a href="#services" class="hover:text-gold-400 transition-colors">Building Houses & Extensions</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition-colors">Interior & Exterior Painting</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition-colors">Complete Home Renovations</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition-colors">Carpentry, Ceilings & Roofs</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition-colors">Plumbing Installations & Repairs</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition-colors">Electrical & Switchboard Upgrades</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h4 class="font-display font-bold text-sm uppercase tracking-wider text-alabaster mb-4">Quick Links</h4>
+          <ul class="space-y-2.5 text-xs text-slate-400">
+            <li><a href="#home" class="hover:text-gold-400 transition-colors">Home</a></li>
+            <li><a href="#services" class="hover:text-gold-400 transition-colors">Our Services</a></li>
+            <li><a href="#showcase" class="hover:text-gold-400 transition-colors">Our Quality Standard</a></li>
+            <li><a href="#contact" class="hover:text-gold-400 transition-colors">Request a Free Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div>
+          <h4 class="font-display font-bold text-sm uppercase tracking-wider text-alabaster mb-4">Contact Details</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-phone text-gold-500"></i>
+              <a href="tel:0766333420" class="hover:text-gold-400 font-bold">076 633 3420</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-envelope text-gold-500"></i>
+              <a href="mailto:Info@mboneniconstruction.com" class="hover:text-gold-400 break-all">Info@mboneniconstruction.com</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="fa-solid fa-location-dot text-gold-500"></i>
+              <span>Tembisa, Gauteng</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© <span id="current-year"></span> Mboneni Construction. All Rights Reserved.</p>
+        <p class="text-slate-400">Your Dream Home Is Possible • <span class="text-gold-400">Tembisa</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- FLOATING WHATSAPP QUICK-ACTION BUTTON -->
+  <!-- ===================================================================== -->
+  <a
+    href="https://wa.me/27766333420?text=Hello%20Mboneni%20Construction,%20I%20visited%20your%20website%20and%20would%20like%20a%20quote."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Mboneni Construction on WhatsApp"
+    class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-4 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 font-extrabold text-xs sm:text-sm shadow-2xl shadow-emerald-500/30 hover:scale-105 transition-all"
+  >
+    <i class="fa-brands fa-whatsapp text-xl"></i>
+    <span class="hidden sm:inline">Chat on WhatsApp</span>
+  </a>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVE JAVASCRIPT: CANVAS PARTICLE MESH, ESTIMATOR & ANIMATIONS -->
+  <!-- ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set current footer year
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // -------------------------------------------------------------------
+      // 1. Mobile Navigation Drawer Toggle
+      // -------------------------------------------------------------------
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileIcon = document.getElementById('mobile-menu-icon');
+
+      mobileBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+        mobileIcon.className = isHidden ? 'fa-solid fa-bars text-lg' : 'fa-solid fa-xmark text-lg';
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileIcon.className = 'fa-solid fa-bars text-lg';
+        });
+      });
+
+      // -------------------------------------------------------------------
+      // 2. Scroll Reveal & Animated Number Counters (IntersectionObserver)
+      // -------------------------------------------------------------------
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal-up, .reveal-scale').forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      // Animated Counters
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const duration = 1600;
+            const startTime = performance.now();
+
+            const updateCounter = (now) => {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              // Ease out cubic
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.floor(eased * target);
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              } else {
+                el.textContent = target;
+              }
+            };
+            requestAnimationFrame(updateCounter);
+            counterObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.4 });
+
+      document.querySelectorAll('.counter').forEach(counter => {
+        counterObserver.observe(counter);
+      });
+
+      // -------------------------------------------------------------------
+      // 3. Hero Architectural Node & Blueprint Canvas Animation
+      // -------------------------------------------------------------------
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+      let width, height, particles;
+      const mouse = { x: null, y: null, radius: 150 };
+
+      function resizeCanvas() {
+        width = canvas.width = canvas.parentElement.offsetWidth;
+        height = canvas.height = canvas.parentElement.offsetHeight;
+        initParticles();
+      }
+
+      function initParticles() {
+        const count = Math.min(Math.floor((width * height) / 18000), 65);
+        particles = [];
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            size: Math.random() * 2 + 1.2,
+          });
+        }
+      }
+
+      window.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+
+      window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      function animateCanvas() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          // Draw gold architectural vertex node
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(245, 184, 0, 0.65)';
+          ctx.fill();
+
+          // Connect nearby nodes with fine gold blueprint lines
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p.x - p2.x;
+            const dy = p.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 135) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(245, 184, 0, ${(1 - dist / 135) * 0.22})`;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+
+          // Interactive cursor tether
+          if (mouse.x !== null && mouse.y !== null) {
+            const mdx = p.x - mouse.x;
+            const mdy = p.y - mouse.y;
+            const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+            if (mdist < mouse.radius) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.strokeStyle = `rgba(253, 224, 71, ${(1 - mdist / mouse.radius) * 0.45})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(animateCanvas);
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+      animateCanvas();
+
+      // -------------------------------------------------------------------
+      // 4. Service Card Quick-Select Helper
+      // -------------------------------------------------------------------
+      window.selectServiceForQuote = function (serviceName) {
+        const serviceSelect = document.getElementById('client-service');
+        const messageField = document.getElementById('client-message');
+        serviceSelect.value = serviceName;
+        if (!messageField.value.trim()) {
+          messageField.value = `Hello Mboneni Construction, I am interested in your ${serviceName} service and would like to arrange a free site consultation and quotation.`;
+        }
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => document.getElementById('client-name').focus(), 600);
+      };
+
+      // -------------------------------------------------------------------
+      // 5. Quote Form Submission & Direct WhatsApp / Email Dispatch
+      // -------------------------------------------------------------------
+      const quoteForm = document.getElementById('quote-form');
+      const confirmationBox = document.getElementById('form-confirmation');
+      const confirmationSummary = document.getElementById('confirmation-summary');
+      const mailtoLink = document.getElementById('mailto-dispatch-link');
+
+      quoteForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('client-name').value.trim();
+        const phone = document.getElementById('client-phone').value.trim();
+        const service = document.getElementById('client-service').value;
+        const area = document.getElementById('client-area').value.trim() || 'Tembisa';
+        const message = document.getElementById('client-message').value.trim();
+
+        const subject = encodeURIComponent(`Quote Request: ${service} - ${name} (${area})`);
+        const body = encodeURIComponent(
+          `MBONENI CONSTRUCTION - NEW QUOTE ENQUIRY\n` +
+          `----------------------------------------\n` +
+          `Client Name: ${name}\n` +
+          `Phone/WhatsApp: ${phone}\n` +
+          `Service: ${service}\n` +
+          `Location/Area: ${area}\n\n` +
+          `Project Details:\n${message}`
+        );
+
+        mailtoLink.href = `mailto:Info@mboneniconstruction.com?subject=${subject}&body=${body}`;
+        confirmationSummary.textContent = `Thank you, ${name}. Your enquiry for ${service} in ${area} is ready. Click below to send directly to Info@mboneniconstruction.com or use the WhatsApp button for an immediate response.`;
+        confirmationBox.classList.remove('hidden');
+      });
+
+      window.sendViaWhatsApp = function () {
+        const name = document.getElementById('client-name').value.trim() || 'Prospective Client';
+        const service = document.getElementById('client-service').value;
+        const area = document.getElementById('client-area').value.trim() || 'Tembisa';
+        const message = document.getElementById('client-message').value.trim() || `I would like a quote for ${service}.`;
+
+        const waText = encodeURIComponent(
+          `Hello Mboneni Construction!\n` +
+          `*Name:* ${name}\n` +
+          `*Service:* ${service}\n` +
+          `*Area:* ${area}\n` +
+          `*Details:* ${message}`
+        );
+
+        window.open(`https://wa.me/27766333420?text=${waText}`, '_blank', 'noopener,noreferrer');
+      };
+
+      // Copy Email Helper using execCommand for iframe compatibility
+      window.copyEmailAddress = function () {
+        const tempInput = document.createElement('input');
+        tempInput.value = 'Info@mboneniconstruction.com';
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        const toast = document.getElementById('copy-toast');
+        toast.classList.remove('hidden');
+        toast.classList.add('flex');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+          toast.classList.remove('flex');
+        }, 3500);
+      };
+    });
+  </script>
+</body>
+</html>
+```
